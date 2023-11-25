@@ -3,7 +3,7 @@ const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 const multer = require('multer');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 
 // Servir arquivos estáticos do diretório 'public'
@@ -69,8 +69,7 @@ app.post('/enviar-email', upload.single('Documento'), (req, res) => {
     });
 });
 
-// Iniciar o servidor
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
     console.log(`Servidor está rodando em http://localhost:${port}`);
-});
+  });
 
