@@ -12,13 +12,6 @@
         "dest": "/server.js"
       }
     ],
-    "public": {
-      "rewrites": [
-        {
-          "source": "/public/(.*)",
-          "destination": "/$1"
-        }
-      ]
-    }
+    "public": true
   }
   
